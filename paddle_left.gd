@@ -5,6 +5,7 @@ extends PaddleBase
 
 func _physics_process(_delta) -> void:
 	#velocity.y = Input.get_axis("left_up", "left_down") * speed
+	#deneme
 	
 	# ball node unu alip pozisyon bilgisi ile bot icin paddle konumlandirma
 	var dif = ball_node.global_position.y - global_position.y
