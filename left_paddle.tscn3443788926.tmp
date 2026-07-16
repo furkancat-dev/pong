@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cy3stqxg3yafa"]
+
+[ext_resource type="Script" uid="uid://dtit4chiy0my1" path="res://main.gd" id="1_rm3uy"]
+[ext_resource type="Script" uid="uid://dtapalq3kv514" path="res://left_paddle.gd" id="1_wlu2s"]
+[ext_resource type="Script" uid="uid://dv5w0mf7mhmco" path="res://right_paddle.gd" id="2_03875"]
+[ext_resource type="Texture2D" uid="uid://2tptw81rbdvt" path="res://ball.png" id="3_ng2hc"]
+[ext_resource type="Script" uid="uid://x65ynvhjg3c4" path="res://ball.gd" id="3_rpqnb"]
+
+[sub_resource type="Gradient" id="Gradient_03875"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iadj7"]
+gradient = SubResource("Gradient_03875")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybre"]
+size = Vector2(25, 116)
+
+[node name="Node" type="Node2D" unique_id=1589445655]
+script = ExtResource("1_rm3uy")
+
+[node name="LeftPaddle" type="CharacterBody2D" parent="." unique_id=82933314]
+script = ExtResource("1_wlu2s")
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftPaddle" unique_id=2048462872]
+position = Vector2(13, 26)
+scale = Vector2(0.40625, 1.8124999)
+texture = SubResource("GradientTexture2D_iadj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPaddle" unique_id=1818496937]
+position = Vector2(13.5, 26)
+shape = SubResource("RectangleShape2D_2ybre")
+
+[node name="RightPaddle" type="CharacterBody2D" parent="." unique_id=875880507]
+script = ExtResource("2_03875")
+
+[node name="Sprite2D" type="Sprite2D" parent="RightPaddle" unique_id=462661978]
+position = Vector2(-19.5, 26)
+scale = Vector2(0.390625, 1.8125)
+texture = SubResource("GradientTexture2D_iadj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightPaddle" unique_id=334783799]
+position = Vector2(-19, 26)
+shape = SubResource("RectangleShape2D_2ybre")
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=1316763956]
+script = ExtResource("3_rpqnb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=82578886]
+position = Vector2(134, 63.999996)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_ng2hc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1875643898]

@@ -1,17 +1,15 @@
-# Godot 4+ specific ignores
+# Godot tarafından oluşturulan cache/import dosyaları
 .godot/
-.nomedia
 
-# Godot-specific ignores
-.import/
-export.cfg
-export_credentials.cfg
-*.tmp
+# Export/build çıktıları
+build/
+builds/
+exports/
 
-# Imported translations (automatically generated from CSV files)
-*.translation
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db
 
-# Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json
+# IDE ayarları
+.vscode/
+.idea/

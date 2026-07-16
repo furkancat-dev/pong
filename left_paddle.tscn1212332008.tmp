@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cy3stqxg3yafa"]
+
+[ext_resource type="Script" uid="uid://ha0arajm6n8c" path="res://left_paddle.gd" id="1_wlu2s"]
+
+[sub_resource type="Gradient" id="Gradient_03875"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iadj7"]
+gradient = SubResource("Gradient_03875")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybre"]
+size = Vector2(63, 20)
+
+[node name="Node" type="Node2D" unique_id=1589445655]
+
+[node name="LeftPaddle" type="CharacterBody2D" parent="." unique_id=82933314]
+script = ExtResource("1_wlu2s")
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftPaddle" unique_id=2048462872]
+texture = SubResource("GradientTexture2D_iadj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPaddle" unique_id=1818496937]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_2ybre")
