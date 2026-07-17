@@ -9,7 +9,6 @@ func _physics_process(_delta) -> void:
 	# keep this code for now
 	#velocity.y = Input.get_axis("left_up", "left_down") * speed
 	
-	# ball node unu alip pozisyon bilgisi ile bot icin paddle konumlandirma
 	var difference_y := ball_target.global_position.y - global_position.y
 	
 	if abs(difference_y) < dead_zone:
