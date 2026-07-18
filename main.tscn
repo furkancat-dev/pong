@@ -15,6 +15,14 @@
 [ext_resource type="Texture2D" uid="uid://ccbpkyvuwbk87" path="res://assets/button_exit.png" id="10_82xsv"]
 [ext_resource type="Texture2D" uid="uid://cnjai487t50jx" path="res://assets/button_pressed_exit.png" id="11_getpj"]
 [ext_resource type="Texture2D" uid="uid://mgcocpij2ft8" path="res://assets/text_game_over.png" id="12_u3vtr"]
+[ext_resource type="Texture2D" uid="uid://bpo03bmia35j8" path="res://assets/options_panel_blue.png" id="16_2cqfq"]
+[ext_resource type="Script" uid="uid://cohwhpshkjuo7" path="res://option.gd" id="17_d13ii"]
+[ext_resource type="Texture2D" uid="uid://c6k4ja5mkvlsq" path="res://assets/button_resume_blue.png" id="17_ryguw"]
+[ext_resource type="Texture2D" uid="uid://cayuoh1t0qwk" path="res://assets/button_restart_blue.png" id="17_yaehf"]
+[ext_resource type="Texture2D" uid="uid://drdk7tk1jd3wp" path="res://assets/button_pressed_restart_blue.png" id="18_074og"]
+[ext_resource type="Texture2D" uid="uid://dilhcjnutv4g0" path="res://assets/button_pressed_resume_blue.png" id="18_d13ii"]
+[ext_resource type="Texture2D" uid="uid://d1nfj6cxc7ni8" path="res://assets/button_exit_blue.png" id="19_82xsv"]
+[ext_resource type="Texture2D" uid="uid://bs73lnqi4g08j" path="res://assets/button_pressed_exit_blue.png" id="20_getpj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybre"]
 size = Vector2(10, 72)
@@ -30,6 +38,15 @@ size = Vector2(1152, 20)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_game_over_panel"]
 texture = ExtResource("9_w48qg")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2cqfq"]
+texture = ExtResource("16_2cqfq")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
@@ -132,34 +149,66 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer" unique_id=376490969]
+[node name="VContainer" type="VBoxContainer" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer" unique_id=376490969]
 layout_mode = 2
 
-[node name="GameOverLabel" type="TextureRect" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer" unique_id=1675795532]
+[node name="GameOverLabel" type="TextureRect" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VContainer" unique_id=1675795532]
 layout_mode = 2
 texture = ExtResource("12_u3vtr")
 stretch_mode = 3
 
-[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer" unique_id=1193852786]
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VContainer" unique_id=1193852786]
 layout_mode = 2
 
-[node name="Spacer" type="Control" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer" unique_id=754254159]
+[node name="Spacer" type="Control" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VContainer" unique_id=754254159]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer" unique_id=274636300]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VContainer" unique_id=274636300]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer/CenterContainer" unique_id=943126240]
+[node name="HContainer" type="HBoxContainer" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VContainer/CenterContainer" unique_id=943126240]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=2143512389]
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VContainer/CenterContainer/HContainer" unique_id=2143512389]
 layout_mode = 2
 texture_normal = ExtResource("8_074og")
 texture_pressed = ExtResource("9_cegan")
 
-[node name="ExitButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1905667017]
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VContainer/CenterContainer/HContainer" unique_id=1905667017]
 layout_mode = 2
 texture_normal = ExtResource("10_82xsv")
 texture_pressed = ExtResource("11_getpj")
+
+[node name="OptionPanel" type="PanelContainer" parent="CanvasLayer/UI/CenterContainer" unique_id=2040766972]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2cqfq")
+script = ExtResource("17_d13ii")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/CenterContainer/OptionPanel" unique_id=1756597223]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VContainer" type="VBoxContainer" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer" unique_id=156081664]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ResumeButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=921066846]
+layout_mode = 2
+texture_normal = ExtResource("17_ryguw")
+texture_pressed = ExtResource("18_d13ii")
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=810982459]
+layout_mode = 2
+texture_normal = ExtResource("17_yaehf")
+texture_pressed = ExtResource("18_074og")
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=942843814]
+layout_mode = 2
+texture_normal = ExtResource("19_82xsv")
+texture_pressed = ExtResource("20_getpj")
