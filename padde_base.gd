@@ -8,7 +8,6 @@ enum PaddleSide {
 
 @export var side: PaddleSide = PaddleSide.LEFT
 @export var speed := 300
-
 @onready var paddle_sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:

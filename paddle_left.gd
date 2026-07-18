@@ -1,4 +1,4 @@
-extends "res://padde_base.gd"
+extends PaddleBase
 
 @onready var ball_node: Node2D = $"../Ball"
 @export var bot_speed := 300.0
