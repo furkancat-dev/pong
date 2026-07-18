@@ -9,20 +9,24 @@ enum PaddleSide {
 @export var side: PaddleSide = PaddleSide.LEFT
 @export var speed := 300
 
-func _ready() -> void:
-	update_position()
-	# Listen viewport change
-	get_viewport().size_changed.connect(update_position)
+@onready var paddle_sprite: Sprite2D = $Sprite2D
 
-# Updates the paddle position based on the paddle type
-func update_position() -> void:
-	var viewport_size = get_viewport_rect().size
-	var paddle_síze = $Sprite2D.texture.get_size() * $Sprite2D.scale
+func _ready() -> void:
+	start_position()
+	get_viewport().size_changed.connect(_update_position)
+
+func start_position() -> void:
+	velocity = Vector2.ZERO
+	_update_position()
+
+func _update_position() -> void:
+	var viewport_size := get_viewport_rect().size
+	var paddle_size: Vector2 = paddle_sprite.texture.get_size() * paddle_sprite.scale
 	
 	match side:
 		PaddleSide.LEFT:
-			position.x = paddle_síze.x / 2
+			position.x = paddle_size.x / 2
 		PaddleSide.RIGHT:
-			position.x = viewport_size.x - paddle_síze.x / 2
+			position.x = viewport_size.x - paddle_size.x / 2
 
 	position.y = viewport_size.y / 2

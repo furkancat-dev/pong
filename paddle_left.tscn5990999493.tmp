@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://cy3stqxg3yafa"]
+
+[ext_resource type="Script" uid="uid://dtit4chiy0my1" path="res://main.gd" id="1_ev1s5"]
+[ext_resource type="Script" uid="uid://dtapalq3kv514" path="res://paddle_left.gd" id="2_ev1s5"]
+[ext_resource type="Script" uid="uid://dv5w0mf7mhmco" path="res://paddle_right.gd" id="3_ev1s5"]
+[ext_resource type="Script" uid="uid://x65ynvhjg3c4" path="res://ball.gd" id="4_m8wbw"]
+[ext_resource type="Texture2D" uid="uid://2tptw81rbdvt" path="res://ball.png" id="5_ie15l"]
+[ext_resource type="Script" uid="uid://oi5eadpuqcj8" path="res://game_over.gd" id="6_puv44"]
+[ext_resource type="Script" uid="uid://cqogs0kers4at" path="res://walls.gd" id="7_v1swy"]
+
+[sub_resource type="Gradient" id="Gradient_03875"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iadj7"]
+gradient = SubResource("Gradient_03875")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybre"]
+size = Vector2(25, 116)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rm3uy"]
+radius = 11.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iadj7"]
+size = Vector2(1150.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b0i4"]
+size = Vector2(1152, 20)
+
+[node name="Node" type="Node2D" unique_id=1589445655]
+script = ExtResource("1_ev1s5")
+
+[node name="LeftPaddle" type="CharacterBody2D" parent="." unique_id=82933314]
+script = ExtResource("2_ev1s5")
+bot_speed = null
+dead_zone = null
+side = null
+speed = null
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftPaddle" unique_id=2048462872]
+scale = Vector2(0.40625, 1.8124999)
+texture = SubResource("GradientTexture2D_iadj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPaddle" unique_id=1818496937]
+shape = SubResource("RectangleShape2D_2ybre")
+
+[node name="RightPaddle" type="CharacterBody2D" parent="." unique_id=875880507]
+script = ExtResource("3_ev1s5")
+side = 1
+speed = null
+
+[node name="Sprite2D" type="Sprite2D" parent="RightPaddle" unique_id=462661978]
+scale = Vector2(0.390625, 1.8125)
+texture = SubResource("GradientTexture2D_iadj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightPaddle" unique_id=334783799]
+shape = SubResource("RectangleShape2D_2ybre")
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=1316763956]
+script = ExtResource("4_m8wbw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=82578886]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_ie15l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1875643898]
+shape = SubResource("CircleShape2D_rm3uy")
+
+[node name="Walls" type="Node" parent="." unique_id=1364748573]
+script = ExtResource("7_v1swy")
+
+[node name="Top" type="StaticBody2D" parent="Walls" unique_id=1187489387]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top" unique_id=985858321]
+position = Vector2(577, 0)
+shape = SubResource("RectangleShape2D_iadj7")
+
+[node name="Bottom" type="StaticBody2D" parent="Walls" unique_id=556753913]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom" unique_id=1014195357]
+position = Vector2(576, 648)
+shape = SubResource("RectangleShape2D_0b0i4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1689903973]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=1042693006]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/UI" unique_id=1540731251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverPanel" type="PanelContainer" parent="CanvasLayer/UI/CenterContainer" unique_id=644143906]
+visible = false
+custom_minimum_size = Vector2(360, 200)
+layout_mode = 2
+script = ExtResource("6_puv44")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/CenterContainer/GameOverPanel" unique_id=1803908511]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer" unique_id=376490969]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer" unique_id=1675795532]
+layout_mode = 2
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer" unique_id=1193852786]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer" unique_id=943126240]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=502480629]
+layout_mode = 2
+text = "Restart"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2007963959]
+layout_mode = 2
+text = "Exit"

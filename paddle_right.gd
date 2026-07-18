@@ -1,4 +1,4 @@
-extends PaddleBase
+extends "res://padde_base.gd"
 
 func _physics_process(_delta) -> void:
 	velocity.y = Input.get_axis("ui_up", "ui_down") * speed

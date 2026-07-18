@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2tptw81rbdvt"
-path="res://.godot/imported/ball.png-9a4ca347acb7532f6ae347744a6b04f7.ctex"
+uid="uid://bsp00htao8qlm"
+path="res://.godot/imported/paddle_vertical.png-ffb0262f0214b120e335a0979c1e410e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ball.png"
-dest_files=["res://.godot/imported/ball.png-9a4ca347acb7532f6ae347744a6b04f7.ctex"]
+source_file="res://assets/paddle_vertical.png"
+dest_files=["res://.godot/imported/paddle_vertical.png-ffb0262f0214b120e335a0979c1e410e.ctex"]
 
 [params]
 
@@ -37,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
