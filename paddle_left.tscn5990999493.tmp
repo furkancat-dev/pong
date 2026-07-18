@@ -26,12 +26,14 @@ size = Vector2(1150.5, 20)
 size = Vector2(1152, 20)
 
 [node name="Node" type="Node2D" unique_id=1589445655]
-process_mode = 3
 script = ExtResource("1_ev1s5")
 
 [node name="LeftPaddle" type="CharacterBody2D" parent="." unique_id=82933314]
-process_mode = 1
 script = ExtResource("2_ev1s5")
+bot_speed = null
+dead_zone = null
+side = null
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="LeftPaddle" unique_id=2048462872]
 scale = Vector2(0.40625, 1.8124999)
@@ -41,7 +43,6 @@ texture = SubResource("GradientTexture2D_iadj7")
 shape = SubResource("RectangleShape2D_2ybre")
 
 [node name="RightPaddle" type="CharacterBody2D" parent="." unique_id=875880507]
-process_mode = 1
 script = ExtResource("3_ev1s5")
 side = 1
 speed = null
@@ -54,7 +55,6 @@ texture = SubResource("GradientTexture2D_iadj7")
 shape = SubResource("RectangleShape2D_2ybre")
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=1316763956]
-process_mode = 1
 script = ExtResource("4_m8wbw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=82578886]
@@ -65,7 +65,6 @@ texture = ExtResource("5_ie15l")
 shape = SubResource("CircleShape2D_rm3uy")
 
 [node name="Walls" type="Node" parent="." unique_id=1364748573]
-process_mode = 1
 script = ExtResource("7_v1swy")
 
 [node name="Top" type="StaticBody2D" parent="Walls" unique_id=1187489387]
@@ -121,10 +120,6 @@ vertical_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer" unique_id=1193852786]
 layout_mode = 2
-
-[node name="Spacer" type="Control" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer" unique_id=754254159]
-layout_mode = 2
-size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/CenterContainer/GameOverPanel/MarginContainer/VBoxContainer" unique_id=943126240]
 layout_mode = 2
