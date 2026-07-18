@@ -3,8 +3,8 @@ extends PanelContainer
 signal restart_requested
 signal exit_requested
 
-@onready var restart_button: Button = $MarginContainer/VBoxContainer/HBoxContainer/RestartButton
-@onready var exit_button: Button = $MarginContainer/VBoxContainer/HBoxContainer/ExitButton
+@onready var restart_button: TextureButton = $MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/RestartButton
+@onready var exit_button: TextureButton = $MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/ExitButton
 
 func _ready() -> void:
 	restart_button.pressed.connect(_on_restart_button_pressed)
