@@ -20,13 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://c6k4ja5mkvlsq" path="res://assets/button_resume_blue.png" id="17_ryguw"]
 [ext_resource type="Texture2D" uid="uid://cayuoh1t0qwk" path="res://assets/button_restart_blue.png" id="17_yaehf"]
 [ext_resource type="Texture2D" uid="uid://drdk7tk1jd3wp" path="res://assets/button_pressed_restart_blue.png" id="18_074og"]
-[ext_resource type="Texture2D" uid="uid://dh502vtvs3gtj" path="res://assets/button_pressed_resume_blue.png" id="18_d13ii"]
+[ext_resource type="Texture2D" uid="uid://dilhcjnutv4g0" path="res://assets/button_pressed_resume_blue.png" id="18_d13ii"]
 [ext_resource type="Texture2D" uid="uid://d1nfj6cxc7ni8" path="res://assets/button_exit_blue.png" id="19_82xsv"]
-[ext_resource type="Texture2D" uid="uid://bn0pt78y01480" path="res://assets/button_one_player_unchecked_blue.png" id="20_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://bs73lnqi4g08j" path="res://assets/button_pressed_exit_blue.png" id="20_getpj"]
-[ext_resource type="Texture2D" uid="uid://breissn1o3lg" path="res://assets/button_one_player_checked_blue.png" id="21_0odxb"]
-[ext_resource type="Texture2D" uid="uid://cfiu08vnwf0pa" path="res://assets/button_two_player_unchecked_blue.png" id="23_a6jrf"]
-[ext_resource type="Texture2D" uid="uid://brt6nnfdbdmvt" path="res://assets/button_two_player_checked_blue.png" id="23_xuqvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybre"]
 size = Vector2(10, 72)
@@ -77,10 +73,6 @@ process_mode = 1
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("2_dg77c")
-bot_speed = null
-dead_zone = null
-side = null
-speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="LeftPaddle" unique_id=2048462872]
 texture = ExtResource("4_ycdy4")
@@ -217,18 +209,6 @@ theme_override_constants/separation = 8
 layout_mode = 2
 texture_normal = ExtResource("17_ryguw")
 texture_pressed = ExtResource("18_d13ii")
-
-[node name="OnePlayerButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=361556620]
-layout_mode = 2
-toggle_mode = true
-texture_normal = ExtResource("20_1u8w0")
-texture_pressed = ExtResource("21_0odxb")
-
-[node name="TwoPlayerButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=112339012]
-layout_mode = 2
-toggle_mode = true
-texture_normal = ExtResource("23_a6jrf")
-texture_pressed = ExtResource("23_xuqvo")
 
 [node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=810982459]
 layout_mode = 2
