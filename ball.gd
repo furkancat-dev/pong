@@ -18,6 +18,16 @@ func _physics_process(delta: float) -> void:
 	
 	if collision:
 		_handle_collision(collision)
+		
+func start_position() -> void:
+	global_position = get_viewport_rect().size / 2
+	direction = _get_random_direction()
+	
+func _get_random_direction() -> Vector2:
+	var y_direction := random.randf_range(-0.4, 0.4)
+	var x_direction := -1 if random.randi_range(0, 1) == 0 else 1
+	
+	return Vector2(x_direction, y_direction).normalized()
 
 func _handle_collision(collision: KinematicCollision2D) -> void:
 	var collider := collision.get_collider() as Node2D
@@ -43,13 +53,3 @@ func _check_screen_exit() -> void:
 		ball_exited.emit("left")
 	elif ball_position > screen_width:
 		ball_exited.emit("right")
-		
-func start_position() -> void:
-	global_position = get_viewport_rect().size / 2
-	direction = _get_random_direction()
-
-func _get_random_direction() -> Vector2:
-	var y_direction := random.randf_range(-0.4, 0.4)
-	var x_direction := -1 if random.randi_range(0, 1) == 0 else 1
-	
-	return Vector2(x_direction, y_direction).normalized()
