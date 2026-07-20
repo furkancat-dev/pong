@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var win_score:= 1
+@export var win_score:= 10
 @onready var ball_node: CharacterBody2D = $Ball
 @onready var left_paddle_node: PaddleBase = $LeftPaddle
 @onready var right_paddle_node: PaddleBase = $RightPaddle
@@ -97,7 +97,7 @@ func _on_ball_exited(side: String) -> void:
 	if left_score >= win_score or right_score >= win_score:
 		_show_match_result()
 	else:
-		_on_restart_requested()
+		_start_round()
 
 func _show_match_result() -> void:
 	get_tree().paused = true
@@ -138,25 +138,50 @@ func _set_match_result_button_textures(
 func _on_resume_requested() -> void:
 	option_panel_node.visible = false
 	get_tree().paused = false
+	
+func _on_restart_requested() -> void:
+	_restart_match()
 
 func _on_game_mode_changed(mode: String) -> void:
-	if mode == "one_player":
-		game_mode = GameMode.ONE_PLAYER
-	elif mode == "two_player":
-		game_mode = GameMode.TWO_PLAYER
-
-func _on_restart_requested() -> void:
-	_countdown_start()
+	var selected_game_mode := game_mode
 	
+	if mode == "one_player":
+		selected_game_mode = GameMode.ONE_PLAYER
+	elif mode == "two_player":
+		selected_game_mode = GameMode.TWO_PLAYER
+	
+	if selected_game_mode == game_mode:
+		return
+	
+	game_mode = selected_game_mode
+	_restart_match()
+
+func _start_round() -> void:
+	_countdown_start()
+	_close_panels()
+	_reset_positions()
+
+func _restart_match() -> void:
+	_reset_score()
+	_start_round()
+	
+func _close_panels() -> void:
 	match_result_panel_node.visible = false
 	option_panel_node.visible = false
 	
+func _reset_positions() -> void:
 	ball_node.start_position()
 	left_paddle_node.start_position()
 	right_paddle_node.start_position()
 
 func _on_exit_requested() -> void:
 	get_tree().quit()
+	
+func _reset_score() -> void:
+	left_score = 0
+	right_score = 0
+	left_score_node.text = str(left_score)
+	right_score_node.text = str(right_score)
 	
 func _toggle_pause() -> void:
 	if match_result_panel_node.visible:
