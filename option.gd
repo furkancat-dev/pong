@@ -3,6 +3,7 @@ extends PanelContainer
 signal resume_requested
 signal restart_requested
 signal exit_requested
+signal game_mode_changed(mode: String)
 
 @onready var resume_button: TextureButton = $MarginContainer/VContainer/ResumeButton
 @onready var one_player_button: TextureButton = $MarginContainer/VContainer/OnePlayerButton
@@ -31,6 +32,7 @@ func _two_player_pressed() -> void:
 func _select_game_mode(mode: String) -> void:
 	one_player_button.button_pressed = mode == "one_player"
 	two_player_button.button_pressed = mode == "two_player"
+	game_mode_changed.emit(mode)
 
 func _on_restart_button_pressed() -> void:
 	restart_requested.emit()
