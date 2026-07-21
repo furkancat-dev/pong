@@ -1,30 +1,9 @@
 extends Node2D
 
-@export var win_score:= 10
-@onready var ball_node: CharacterBody2D = $Ball
-@onready var left_paddle_node: PaddleBase = $LeftPaddle
-@onready var right_paddle_node: PaddleBase = $RightPaddle
-@onready var option_panel_node: PanelContainer = $CanvasLayer/UI/CenterContainer/OptionPanel
-@onready var match_result_panel_node: PanelContainer = $CanvasLayer/UI/CenterContainer/MatchResultPanel
-@onready var countdown_node: Timer = $"Countdown"
-@onready var countdown_texture_node: TextureRect = $CanvasLayer/UI/CenterContainer/CountdownTexture
-@onready var left_score_node: Label = $CanvasLayer/UI/ScorePanel/HBoxContainer/LeftScore
-@onready var right_score_node: Label = $CanvasLayer/UI/ScorePanel/HBoxContainer/RightScore
-@onready var match_result_label_node: TextureRect = $CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer/MatchResultLabel
-@onready var match_result_panel_style: StyleBoxTexture = match_result_panel_node.get_theme_stylebox("panel").duplicate()
-@onready var restart_button_node: TextureButton = $CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer/RestartButton
-@onready var exit_button_node: TextureButton = $CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer/ExitButton
-
 enum GameMode {
 	ONE_PLAYER,
-	TWO_PLAYER
+	TWO_PLAYER,
 }
-
-var countdown_value:= 3
-var left_score:= 0
-var right_score:= 0
-var winner := ""
-var game_mode := GameMode.ONE_PLAYER
 
 const COUNTDOWN_TEXTURES := {
 	3: preload("res://assets/countdown_3.png"),
@@ -44,6 +23,28 @@ const BUTTON_RESTART_BLUE := preload("res://assets/button_restart_blue.png")
 const BUTTON_RESTART_PRESSED_BLUE := preload("res://assets/button_pressed_restart_blue.png")
 const BUTTON_EXIT_BLUE := preload("res://assets/button_exit_blue.png")
 const BUTTON_EXIT_PRESSED_BLUE := preload("res://assets/button_pressed_exit_blue.png")
+
+@export var win_score := 10
+
+var countdown_value := 3
+var left_score := 0
+var right_score := 0
+var winner := ""
+var game_mode: GameMode = GameMode.ONE_PLAYER
+
+@onready var ball_node: PongBall = $Ball
+@onready var left_paddle_node: PaddleBase = $LeftPaddle
+@onready var right_paddle_node: PaddleBase = $RightPaddle
+@onready var option_panel_node: PanelContainer = $CanvasLayer/UI/CenterContainer/OptionPanel
+@onready var match_result_panel_node: PanelContainer = ($CanvasLayer/UI/CenterContainer/MatchResultPanel)
+@onready var countdown_node: Timer = $"Countdown"
+@onready var countdown_texture_node: TextureRect = $CanvasLayer/UI/CenterContainer/CountdownTexture
+@onready var left_score_node: Label = $CanvasLayer/UI/ScorePanel/HBoxContainer/LeftScore
+@onready var right_score_node: Label = $CanvasLayer/UI/ScorePanel/HBoxContainer/RightScore
+@onready var match_result_label_node: TextureRect = ($CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer/MatchResultLabel)
+@onready var match_result_panel_style: StyleBoxTexture = (match_result_panel_node.get_theme_stylebox("panel").duplicate())
+@onready var restart_button_node: TextureButton = ($CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer/RestartButton)
+@onready var exit_button_node: TextureButton = ($CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer/ExitButton)
 
 func _ready() -> void:
 	match_result_panel_node.add_theme_stylebox_override("panel", match_result_panel_style)
@@ -112,7 +113,9 @@ func _show_match_result() -> void:
 			BUTTON_EXIT_PRESSED_RED
 		)
 	else:
-		match_result_label_node.texture = TEXT_PLAYER_1_WINS if winner == "left" else TEXT_PLAYER_2_WINS
+		match_result_label_node.texture = (
+			TEXT_PLAYER_1_WINS if winner == "left" else TEXT_PLAYER_2_WINS
+		)
 		match_result_panel_style.texture = MATCH_RESULT_PANEL_BLUE
 		_set_match_result_button_textures(
 			BUTTON_RESTART_BLUE,
@@ -189,7 +192,7 @@ func _toggle_pause() -> void:
 		
 	option_panel_node.visible = !option_panel_node.visible
 	
-	if !countdown_texture_node.visible:
+	if not countdown_texture_node.visible:
 		get_tree().paused = option_panel_node.visible
 	
 	if option_panel_node.visible:

@@ -1,13 +1,14 @@
+class_name PongBall
 extends CharacterBody2D
 
 signal ball_exited
 
-@export var speed := 500
-@export var max_paddle_bounce_y := 1.2
+@export var speed := 500.0
+@export var max_paddle_bounce_y := 1.3
 
-var random := RandomNumberGenerator.new()
-var direction := Vector2.ZERO
-var has_exited_screen := false
+var direction: Vector2 = Vector2.ZERO
+var _random := RandomNumberGenerator.new()
+var _has_exited_screen := false
 
 func _ready() -> void:
 	start_position()
@@ -23,11 +24,11 @@ func _physics_process(delta: float) -> void:
 func start_position() -> void:
 	global_position = get_viewport_rect().size / 2
 	direction = _get_random_direction()
-	has_exited_screen = false
+	_has_exited_screen = false
 	
 func _get_random_direction() -> Vector2:
-	var y_direction := random.randf_range(-0.4, 0.4)
-	var x_direction := -1 if random.randi_range(0, 1) == 0 else 1
+	var y_direction := _random.randf_range(-0.4, 0.4)
+	var x_direction := -1 if _random.randi_range(0, 1) == 0 else 1
 	
 	return Vector2(x_direction, y_direction).normalized()
 
@@ -48,15 +49,15 @@ func _bounce_from_paddle(paddle: Node2D) -> void:
 	direction = Vector2(x_direction, normalized_offset * max_paddle_bounce_y).normalized()
 
 func _check_screen_exit() -> void:
-	if has_exited_screen:
+	if _has_exited_screen:
 		return
 
 	var ball_position = global_position.x
 	var screen_width = get_viewport_rect().size.x
 	
 	if ball_position < 0:
-		has_exited_screen = true
+		_has_exited_screen = true
 		ball_exited.emit("left")
 	elif ball_position > screen_width:
-		has_exited_screen = true
+		_has_exited_screen = true
 		ball_exited.emit("right")

@@ -1,7 +1,6 @@
 extends Node
 
 @export var wall_thickness := 20.0
-
 @onready var top_collision: CollisionShape2D = $Top/CollisionShape2D
 @onready var bottom_collision: CollisionShape2D = $Bottom/CollisionShape2D
 

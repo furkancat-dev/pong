@@ -13,8 +13,8 @@ signal game_mode_changed(mode: String)
 
 func _ready() -> void:
 	resume_button.pressed.connect(_on_resume_button_pressed)
-	one_player_button.pressed.connect(_one_player_pressed)
-	two_player_button.pressed.connect(_two_player_pressed)
+	one_player_button.pressed.connect(_on_one_player_button_pressed)
+	two_player_button.pressed.connect(_on_two_player_button_pressed)
 	restart_button.pressed.connect(_on_restart_button_pressed)
 	exit_button.pressed.connect(_on_exit_button_pressed)
 	
@@ -23,10 +23,10 @@ func _ready() -> void:
 func _on_resume_button_pressed() -> void:
 	resume_requested.emit()
 	
-func _one_player_pressed() -> void:
+func _on_one_player_button_pressed() -> void:
 	_select_game_mode("one_player")
 
-func _two_player_pressed() -> void:
+func _on_two_player_button_pressed() -> void:
 	_select_game_mode("two_player")
 	
 func _select_game_mode(mode: String) -> void:

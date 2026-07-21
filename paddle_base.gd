@@ -1,13 +1,14 @@
-extends CharacterBody2D
 class_name PaddleBase
+extends CharacterBody2D
 
 enum PaddleSide {
 	LEFT,
-	RIGHT
+	RIGHT,
 }
 
 @export var side: PaddleSide = PaddleSide.LEFT
-@export var speed := 300
+@export var speed: float = 300.0
+
 @onready var paddle_sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
