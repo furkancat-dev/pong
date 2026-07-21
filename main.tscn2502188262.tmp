@@ -277,6 +277,16 @@ toggle_mode = true
 texture_normal = ExtResource("23_a6jrf")
 texture_pressed = ExtResource("23_xuqvo")
 
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=810982459]
+layout_mode = 2
+texture_normal = ExtResource("17_yaehf")
+texture_pressed = ExtResource("18_074og")
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=942843814]
+layout_mode = 2
+texture_normal = ExtResource("19_82xsv")
+texture_pressed = ExtResource("20_getpj")
+
 [node name="DifficultyPanel" type="HBoxContainer" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=1531712770]
 layout_mode = 2
 alignment = 1
@@ -296,13 +306,3 @@ texture = ExtResource("32_ok6jj")
 layout_mode = 2
 texture_normal = ExtResource("33_facbu")
 texture_pressed = ExtResource("34_b1qrp")
-
-[node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=810982459]
-layout_mode = 2
-texture_normal = ExtResource("17_yaehf")
-texture_pressed = ExtResource("18_074og")
-
-[node name="ExitButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=942843814]
-layout_mode = 2
-texture_normal = ExtResource("19_82xsv")
-texture_pressed = ExtResource("20_getpj")

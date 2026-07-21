@@ -1,3 +1,4 @@
+class_name BotPaddle
 extends PaddleBase
 
 enum Difficulty {
@@ -13,9 +14,7 @@ var tracking_power := 7.0
 var dead_zone := 18.0
 
 @onready var ball_node: PongBall = $"../Ball"
-@onready var one_player_node: TextureButton = (
-		$"../CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer/OnePlayerButton"
-)
+@onready var one_player_node: TextureButton = ($"../CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer/OnePlayerButton")
 
 func _ready() -> void:
 	super._ready()
@@ -40,7 +39,7 @@ func _follow_ball() -> void:
 		velocity.y = 0.0
 	else:
 		velocity.y = clamp(difference_y * tracking_power, -bot_speed, bot_speed)
-
+		
 func _apply_difficulty() -> void:
 	match difficulty:
 		Difficulty.EASY:
@@ -57,3 +56,7 @@ func _apply_difficulty() -> void:
 			bot_speed = 430.0
 			tracking_power = 10.0
 			dead_zone = 7.0
+			
+func set_difficulty(new_difficulty: Difficulty) -> void:
+	difficulty = new_difficulty
+	_apply_difficulty()

@@ -8,6 +8,7 @@ signal game_mode_changed(mode: String)
 @onready var resume_button: TextureButton = $MarginContainer/VContainer/ResumeButton
 @onready var one_player_button: TextureButton = $MarginContainer/VContainer/OnePlayerButton
 @onready var two_player_button: TextureButton = $MarginContainer/VContainer/TwoPlayerButton
+@onready var difficulty_panel: DifficultySelector = $MarginContainer/VContainer/DifficultyPanel
 @onready var restart_button: TextureButton = $MarginContainer/VContainer/RestartButton
 @onready var exit_button: TextureButton = $MarginContainer/VContainer/ExitButton
 
@@ -32,6 +33,8 @@ func _on_two_player_button_pressed() -> void:
 func _select_game_mode(mode: String) -> void:
 	one_player_button.button_pressed = mode == "one_player"
 	two_player_button.button_pressed = mode == "two_player"
+	
+	difficulty_panel.set_difficulty_enabled(mode == "one_player")
 	game_mode_changed.emit(mode)
 
 func _on_restart_button_pressed() -> void:

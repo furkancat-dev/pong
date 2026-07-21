@@ -18,4 +18,4 @@ func _update_walls() -> void:
 	top_collision.position = Vector2(viewport_size.x / 2.0, 0)
 	
 	bottom_shape.size = wall_size
-	bottom_collision.position = Vector2(viewport_size.x / 2.0, viewport_size.y)
+	bottom_collision.position = Vector2(viewport_size.x / 2.0, viewport_size.y) 

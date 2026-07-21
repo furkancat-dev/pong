@@ -33,7 +33,7 @@ var winner := ""
 var game_mode: GameMode = GameMode.ONE_PLAYER
 
 @onready var ball_node: PongBall = $Ball
-@onready var left_paddle_node: PaddleBase = $LeftPaddle
+@onready var left_paddle_node: BotPaddle = $LeftPaddle
 @onready var right_paddle_node: PaddleBase = $RightPaddle
 @onready var option_panel_node: PanelContainer = $CanvasLayer/UI/CenterContainer/OptionPanel
 @onready var match_result_panel_node: PanelContainer = ($CanvasLayer/UI/CenterContainer/MatchResultPanel)
@@ -45,6 +45,9 @@ var game_mode: GameMode = GameMode.ONE_PLAYER
 @onready var match_result_panel_style: StyleBoxTexture = (match_result_panel_node.get_theme_stylebox("panel").duplicate())
 @onready var restart_button_node: TextureButton = ($CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer/RestartButton)
 @onready var exit_button_node: TextureButton = ($CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer/ExitButton)
+@onready var difficulty_panel_node: DifficultySelector = (
+		$CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer/DifficultyPanel
+)
 
 func _ready() -> void:
 	match_result_panel_node.add_theme_stylebox_override("panel", match_result_panel_style)
@@ -56,6 +59,7 @@ func _ready() -> void:
 	option_panel_node.game_mode_changed.connect(_on_game_mode_changed)
 	match_result_panel_node.restart_requested.connect(_on_restart_requested)
 	match_result_panel_node.exit_requested.connect(_on_exit_requested)
+	difficulty_panel_node.difficulty_changed.connect(_on_difficulty_changed)
 	
 	_countdown_start()
 
@@ -141,6 +145,10 @@ func _set_match_result_button_textures(
 func _on_resume_requested() -> void:
 	option_panel_node.visible = false
 	get_tree().paused = false
+	
+func _on_difficulty_changed(new_difficulty: BotPaddle.Difficulty) -> void:
+	print(new_difficulty)
+	left_paddle_node.set_difficulty(new_difficulty)
 	
 func _on_restart_requested() -> void:
 	_restart_match()
