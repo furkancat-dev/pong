@@ -1,0 +1,314 @@
+[gd_scene format=3 uid="uid://cy3stqxg3yafa"]
+
+[ext_resource type="Script" uid="uid://dtit4chiy0my1" path="res://game/main.gd" id="1_gob4j"]
+[ext_resource type="Texture2D" uid="uid://cp63l53a05i1g" path="res://assets/background_arena.png" id="2_uvurp"]
+[ext_resource type="Script" uid="uid://dtapalq3kv514" path="res://actors/paddles/paddle_left.gd" id="3_vcdjx"]
+[ext_resource type="Texture2D" uid="uid://bsp00htao8qlm" path="res://assets/paddle_vertical.png" id="4_f85yp"]
+[ext_resource type="Script" uid="uid://dv5w0mf7mhmco" path="res://actors/paddles/paddle_right.gd" id="5_4gc7v"]
+[ext_resource type="Texture2D" uid="uid://c1c3gpec3j4wo" path="res://assets/paddle_vertical_pink.png" id="6_f1cjg"]
+[ext_resource type="Script" uid="uid://x65ynvhjg3c4" path="res://actors/ball/ball.gd" id="7_e00sq"]
+[ext_resource type="Texture2D" uid="uid://meifysolxabq" path="res://assets/ball_default.png" id="8_k5wni"]
+[ext_resource type="Script" uid="uid://cqogs0kers4at" path="res://walls.gd" id="9_44l5f"]
+[ext_resource type="FontFile" uid="uid://dcrs5fdgweq10" path="res://assets/fonts/m5x7.ttf" id="10_2da88"]
+[ext_resource type="Texture2D" uid="uid://dxdwwuqo8xggr" path="res://assets/game_over_panel.png" id="11_w0y0c"]
+[ext_resource type="Script" uid="uid://cjctggqlul1ko" path="res://ui/result/match_result.gd" id="12_gq54d"]
+[ext_resource type="Texture2D" uid="uid://mgcocpij2ft8" path="res://assets/text_game_over.png" id="13_s2dp4"]
+[ext_resource type="Texture2D" uid="uid://bw6j5i0brf0k2" path="res://assets/button_play_again.png" id="14_buoxk"]
+[ext_resource type="Texture2D" uid="uid://2l2mw5en68s4" path="res://assets/button_pressed_play_again.png" id="15_im2gh"]
+[ext_resource type="Texture2D" uid="uid://ccbpkyvuwbk87" path="res://assets/button_exit.png" id="16_84ymw"]
+[ext_resource type="Texture2D" uid="uid://cnjai487t50jx" path="res://assets/button_pressed_exit.png" id="17_u4lhc"]
+[ext_resource type="Texture2D" uid="uid://bpo03bmia35j8" path="res://assets/options_panel_blue.png" id="18_gagp1"]
+[ext_resource type="Script" uid="uid://cohwhpshkjuo7" path="res://ui/options/option.gd" id="19_5amgw"]
+[ext_resource type="Texture2D" uid="uid://c6k4ja5mkvlsq" path="res://assets/button_resume_blue.png" id="20_l8dhh"]
+[ext_resource type="Texture2D" uid="uid://dh502vtvs3gtj" path="res://assets/button_pressed_resume_blue.png" id="21_msvi7"]
+[ext_resource type="Texture2D" uid="uid://bn0pt78y01480" path="res://assets/button_one_player_unchecked_blue.png" id="22_73tpa"]
+[ext_resource type="Texture2D" uid="uid://breissn1o3lg" path="res://assets/button_one_player_checked_blue.png" id="23_3tfmv"]
+[ext_resource type="Texture2D" uid="uid://cfiu08vnwf0pa" path="res://assets/button_two_player_unchecked_blue.png" id="24_ktdwu"]
+[ext_resource type="Texture2D" uid="uid://brt6nnfdbdmvt" path="res://assets/button_two_player_checked_blue.png" id="25_t2wq1"]
+[ext_resource type="Script" uid="uid://c7phav40g7csx" path="res://ui/difficulty/difficulty_panel.gd" id="26_hprsj"]
+[ext_resource type="Texture2D" uid="uid://jxbljasactm7" path="res://assets/button_arrow_left.png" id="27_u6x2d"]
+[ext_resource type="Texture2D" uid="uid://nq1jbod6pdxe" path="res://assets/button_pressed_arrow_left.png" id="28_x8s27"]
+[ext_resource type="Texture2D" uid="uid://nu7ahojy8q5i" path="res://assets/difficulty_normal.png" id="29_oobh7"]
+[ext_resource type="Texture2D" uid="uid://bf12lph7jltuj" path="res://assets/button_arrow_right.png" id="30_kycm2"]
+[ext_resource type="Texture2D" uid="uid://v5nbcb5g1dop" path="res://assets/button_pressed_arrow_right.png" id="31_a1k0t"]
+[ext_resource type="Texture2D" uid="uid://cayuoh1t0qwk" path="res://assets/button_restart_blue.png" id="32_8c722"]
+[ext_resource type="Texture2D" uid="uid://drdk7tk1jd3wp" path="res://assets/button_pressed_restart_blue.png" id="33_ve3av"]
+[ext_resource type="Texture2D" uid="uid://d1nfj6cxc7ni8" path="res://assets/button_exit_blue.png" id="34_ug5su"]
+[ext_resource type="Texture2D" uid="uid://bs73lnqi4g08j" path="res://assets/button_pressed_exit_blue.png" id="35_yifn8"]
+[ext_resource type="Script" uid="uid://dmuqay14l67jd" path="res://assets/audio/music/music.gd" id="36_w6mlb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybre"]
+size = Vector2(10, 72)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rm3uy"]
+radius = 11.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iadj7"]
+size = Vector2(1150.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b0i4"]
+size = Vector2(1152, 20)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_score_panel"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_game_over_panel"]
+texture = ExtResource("11_w0y0c")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2cqfq"]
+texture = ExtResource("18_gagp1")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Main" type="Node2D" unique_id=1589445655]
+process_mode = 3
+script = ExtResource("1_gob4j")
+
+[node name="Countdown" type="Timer" parent="." unique_id=657337167]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1060464146]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uvurp")
+
+[node name="LeftPaddle" type="CharacterBody2D" parent="." unique_id=82933314]
+process_mode = 1
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("3_vcdjx")
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftPaddle" unique_id=2048462872]
+texture = ExtResource("4_f85yp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPaddle" unique_id=1818496937]
+shape = SubResource("RectangleShape2D_2ybre")
+
+[node name="RightPaddle" type="CharacterBody2D" parent="." unique_id=875880507]
+process_mode = 1
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("5_4gc7v")
+side = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="RightPaddle" unique_id=462661978]
+texture = ExtResource("6_f1cjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightPaddle" unique_id=334783799]
+shape = SubResource("RectangleShape2D_2ybre")
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=1316763956]
+process_mode = 1
+collision_mask = 6
+script = ExtResource("7_e00sq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=82578886]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("8_k5wni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1875643898]
+scale = Vector2(0.7, 0.7)
+shape = SubResource("CircleShape2D_rm3uy")
+
+[node name="Walls" type="Node" parent="." unique_id=1364748573]
+process_mode = 1
+script = ExtResource("9_44l5f")
+
+[node name="Top" type="StaticBody2D" parent="Walls" unique_id=1187489387]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top" unique_id=985858321]
+position = Vector2(577, 0)
+shape = SubResource("RectangleShape2D_iadj7")
+
+[node name="Bottom" type="StaticBody2D" parent="Walls" unique_id=556753913]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom" unique_id=1014195357]
+position = Vector2(576, 648)
+shape = SubResource("RectangleShape2D_0b0i4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1689903973]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=1042693006]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScorePanel" type="PanelContainer" parent="CanvasLayer/UI" unique_id=1653061036]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 55.0
+offset_right = 180.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_score_panel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/ScorePanel" unique_id=1994676725]
+layout_mode = 2
+
+[node name="LeftScore" type="Label" parent="CanvasLayer/UI/ScorePanel/HBoxContainer" unique_id=2030436360]
+custom_minimum_size = Vector2(72, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.34, 0.79, 1, 1)
+theme_override_colors/font_outline_color = Color(0.03, 0.04, 0.12, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("10_2da88")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/UI/ScorePanel/HBoxContainer" unique_id=1994248006]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightScore" type="Label" parent="CanvasLayer/UI/ScorePanel/HBoxContainer" unique_id=963350854]
+custom_minimum_size = Vector2(72, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.46, 0.66, 1)
+theme_override_colors/font_outline_color = Color(0.03, 0.04, 0.12, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("10_2da88")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/UI" unique_id=1540731251]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CountdownTexture" type="TextureRect" parent="CanvasLayer/UI/CenterContainer" unique_id=2029279339]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MatchResultPanel" type="PanelContainer" parent="CanvasLayer/UI/CenterContainer" unique_id=644143906]
+visible = false
+z_index = 20
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_game_over_panel")
+script = ExtResource("12_gq54d")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel" unique_id=1803908511]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VContainer" type="VBoxContainer" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer" unique_id=376490969]
+layout_mode = 2
+
+[node name="MatchResultLabel" type="TextureRect" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer" unique_id=1675795532]
+layout_mode = 2
+texture = ExtResource("13_s2dp4")
+stretch_mode = 3
+
+[node name="Spacer" type="Control" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer" unique_id=754254159]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer" unique_id=2143512389]
+layout_mode = 2
+texture_normal = ExtResource("14_buoxk")
+texture_pressed = ExtResource("15_im2gh")
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer" unique_id=1905667017]
+layout_mode = 2
+texture_normal = ExtResource("16_84ymw")
+texture_pressed = ExtResource("17_u4lhc")
+
+[node name="OptionPanel" type="PanelContainer" parent="CanvasLayer/UI/CenterContainer" unique_id=2040766972]
+visible = false
+z_index = 10
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2cqfq")
+script = ExtResource("19_5amgw")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/CenterContainer/OptionPanel" unique_id=1756597223]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VContainer" type="VBoxContainer" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer" unique_id=156081664]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ResumeButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=921066846]
+layout_mode = 2
+texture_normal = ExtResource("20_l8dhh")
+texture_pressed = ExtResource("21_msvi7")
+
+[node name="OnePlayerButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=361556620]
+custom_minimum_size = Vector2(240, 54)
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("22_73tpa")
+texture_pressed = ExtResource("23_3tfmv")
+
+[node name="TwoPlayerButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=112339012]
+custom_minimum_size = Vector2(240, 54)
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("24_ktdwu")
+texture_pressed = ExtResource("25_t2wq1")
+
+[node name="DifficultyPanel" type="HBoxContainer" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=1531712770]
+layout_mode = 2
+alignment = 1
+script = ExtResource("26_hprsj")
+
+[node name="PrevButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer/DifficultyPanel" unique_id=800351389]
+layout_mode = 2
+texture_normal = ExtResource("27_u6x2d")
+texture_pressed = ExtResource("28_x8s27")
+
+[node name="Difficulty" type="TextureRect" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer/DifficultyPanel" unique_id=576135544]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("29_oobh7")
+
+[node name="NextButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer/DifficultyPanel" unique_id=1807299179]
+layout_mode = 2
+texture_normal = ExtResource("30_kycm2")
+texture_pressed = ExtResource("31_a1k0t")
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=810982459]
+layout_mode = 2
+texture_normal = ExtResource("32_8c722")
+texture_pressed = ExtResource("33_ve3av")
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=942843814]
+layout_mode = 2
+texture_normal = ExtResource("34_ug5su")
+texture_pressed = ExtResource("35_yifn8")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1369538431]
+volume_db = -15.0
+autoplay = true
+script = ExtResource("36_w6mlb")
