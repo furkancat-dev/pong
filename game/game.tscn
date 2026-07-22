@@ -83,21 +83,24 @@ texture_margin_bottom = 16.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Main" type="Node2D" unique_id=1589445655]
+[node name="Game" type="Node2D" unique_id=1589445655]
 process_mode = 3
 script = ExtResource("1_vkvnp")
 
 [node name="Countdown" type="Timer" parent="." unique_id=657337167]
 
-[node name="Background" type="TextureRect" parent="." unique_id=1060464146]
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=1060464146]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1280.0
-offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_urpib")
+expand_mode = 1
 
 [node name="LeftPaddle" type="CharacterBody2D" parent="." unique_id=82933314]
 process_mode = 1

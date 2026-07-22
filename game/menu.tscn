@@ -42,15 +42,34 @@ _data = {
 &"label_pulse": SubResource("Animation_i5lmt")
 }
 
-[node name="Menu" type="Node2D" unique_id=896057448]
+[node name="Menu" type="Control" unique_id=896057448]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_wslbq")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1684753725]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_h6fu4")
+expand_mode = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1729570675]
-offset_right = 306.0
-offset_bottom = 40.0
-
-[node name="Background" type="TextureRect" parent="CenterContainer" unique_id=1684753725]
-layout_mode = 2
-texture = ExtResource("1_h6fu4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="CenterContainer" unique_id=564766529]
 layout_mode = 2
@@ -61,11 +80,10 @@ offset_left = -153.0
 offset_top = -18.0
 offset_right = 153.0
 offset_bottom = 18.0
-pivot_offset = Vector2(150, 50)
+pivot_offset = Vector2(153, 18)
 theme_override_fonts/font = ExtResource("2_i5lmt")
 theme_override_font_sizes/font_size = 48
 text = "PRESS ENTER TO PLAY"
-script = ExtResource("3_wslbq")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=522858839]
 volume_db = -15.0
