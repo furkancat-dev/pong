@@ -1,47 +1,61 @@
 [gd_scene format=3 uid="uid://cy3stqxg3yafa"]
 
-[ext_resource type="Script" uid="uid://dtit4chiy0my1" path="res://game/main.gd" id="1_gob4j"]
-[ext_resource type="Texture2D" uid="uid://cp63l53a05i1g" path="res://assets/background_arena.png" id="2_uvurp"]
-[ext_resource type="Script" uid="uid://dtapalq3kv514" path="res://actors/paddles/paddle_left.gd" id="3_vcdjx"]
-[ext_resource type="Texture2D" uid="uid://bsp00htao8qlm" path="res://assets/paddle_vertical.png" id="4_f85yp"]
-[ext_resource type="Script" uid="uid://dv5w0mf7mhmco" path="res://actors/paddles/paddle_right.gd" id="5_4gc7v"]
-[ext_resource type="Texture2D" uid="uid://c1c3gpec3j4wo" path="res://assets/paddle_vertical_pink.png" id="6_f1cjg"]
-[ext_resource type="Script" uid="uid://x65ynvhjg3c4" path="res://actors/ball/ball.gd" id="7_e00sq"]
-[ext_resource type="Texture2D" uid="uid://meifysolxabq" path="res://assets/ball_default.png" id="8_k5wni"]
-[ext_resource type="Script" uid="uid://cqogs0kers4at" path="res://walls.gd" id="9_44l5f"]
-[ext_resource type="FontFile" uid="uid://dcrs5fdgweq10" path="res://assets/fonts/m5x7.ttf" id="10_2da88"]
-[ext_resource type="Texture2D" uid="uid://dxdwwuqo8xggr" path="res://assets/game_over_panel.png" id="11_w0y0c"]
-[ext_resource type="Script" uid="uid://cjctggqlul1ko" path="res://ui/result/match_result.gd" id="12_gq54d"]
-[ext_resource type="Texture2D" uid="uid://mgcocpij2ft8" path="res://assets/text_game_over.png" id="13_s2dp4"]
-[ext_resource type="Texture2D" uid="uid://bw6j5i0brf0k2" path="res://assets/button_play_again.png" id="14_buoxk"]
-[ext_resource type="Texture2D" uid="uid://2l2mw5en68s4" path="res://assets/button_pressed_play_again.png" id="15_im2gh"]
-[ext_resource type="Texture2D" uid="uid://ccbpkyvuwbk87" path="res://assets/button_exit.png" id="16_84ymw"]
-[ext_resource type="Texture2D" uid="uid://cnjai487t50jx" path="res://assets/button_pressed_exit.png" id="17_u4lhc"]
-[ext_resource type="Texture2D" uid="uid://bpo03bmia35j8" path="res://assets/options_panel_blue.png" id="18_gagp1"]
-[ext_resource type="Script" uid="uid://cohwhpshkjuo7" path="res://ui/options/option.gd" id="19_5amgw"]
-[ext_resource type="Texture2D" uid="uid://c6k4ja5mkvlsq" path="res://assets/button_resume_blue.png" id="20_l8dhh"]
-[ext_resource type="Texture2D" uid="uid://dh502vtvs3gtj" path="res://assets/button_pressed_resume_blue.png" id="21_msvi7"]
-[ext_resource type="Texture2D" uid="uid://bn0pt78y01480" path="res://assets/button_one_player_unchecked_blue.png" id="22_73tpa"]
-[ext_resource type="Texture2D" uid="uid://breissn1o3lg" path="res://assets/button_one_player_checked_blue.png" id="23_3tfmv"]
-[ext_resource type="Texture2D" uid="uid://cfiu08vnwf0pa" path="res://assets/button_two_player_unchecked_blue.png" id="24_ktdwu"]
-[ext_resource type="Texture2D" uid="uid://brt6nnfdbdmvt" path="res://assets/button_two_player_checked_blue.png" id="25_t2wq1"]
-[ext_resource type="Script" uid="uid://c7phav40g7csx" path="res://ui/difficulty/difficulty_panel.gd" id="26_hprsj"]
-[ext_resource type="Texture2D" uid="uid://jxbljasactm7" path="res://assets/button_arrow_left.png" id="27_u6x2d"]
-[ext_resource type="Texture2D" uid="uid://nq1jbod6pdxe" path="res://assets/button_pressed_arrow_left.png" id="28_x8s27"]
-[ext_resource type="Texture2D" uid="uid://nu7ahojy8q5i" path="res://assets/difficulty_normal.png" id="29_oobh7"]
-[ext_resource type="Texture2D" uid="uid://bf12lph7jltuj" path="res://assets/button_arrow_right.png" id="30_kycm2"]
-[ext_resource type="Texture2D" uid="uid://v5nbcb5g1dop" path="res://assets/button_pressed_arrow_right.png" id="31_a1k0t"]
-[ext_resource type="Texture2D" uid="uid://cayuoh1t0qwk" path="res://assets/button_restart_blue.png" id="32_8c722"]
-[ext_resource type="Texture2D" uid="uid://drdk7tk1jd3wp" path="res://assets/button_pressed_restart_blue.png" id="33_ve3av"]
-[ext_resource type="Texture2D" uid="uid://d1nfj6cxc7ni8" path="res://assets/button_exit_blue.png" id="34_ug5su"]
-[ext_resource type="Texture2D" uid="uid://bs73lnqi4g08j" path="res://assets/button_pressed_exit_blue.png" id="35_yifn8"]
-[ext_resource type="Script" uid="uid://dmuqay14l67jd" path="res://assets/audio/music/music.gd" id="36_w6mlb"]
+[ext_resource type="Script" uid="uid://dtit4chiy0my1" path="res://game/game.gd" id="1_vkvnp"]
+[ext_resource type="Texture2D" uid="uid://cp63l53a05i1g" path="res://assets/background_arena.png" id="2_urpib"]
+[ext_resource type="Script" uid="uid://dtapalq3kv514" path="res://actors/paddles/paddle_left.gd" id="3_cieqw"]
+[ext_resource type="Texture2D" uid="uid://bsp00htao8qlm" path="res://assets/paddle_vertical.png" id="4_ta815"]
+[ext_resource type="Script" uid="uid://dv5w0mf7mhmco" path="res://actors/paddles/paddle_right.gd" id="5_64wtb"]
+[ext_resource type="Texture2D" uid="uid://c1c3gpec3j4wo" path="res://assets/paddle_vertical_pink.png" id="6_0rekh"]
+[ext_resource type="Script" uid="uid://x65ynvhjg3c4" path="res://actors/ball/ball.gd" id="7_281ou"]
+[ext_resource type="Texture2D" uid="uid://meifysolxabq" path="res://assets/ball_default.png" id="8_nrbry"]
+[ext_resource type="Texture2D" uid="uid://cxhl1rqwq0cty" path="res://assets/particle_pixel.png" id="9_iswgq"]
+[ext_resource type="AudioStream" uid="uid://caqj2880v5a25" path="res://assets/audio/music/hit.wav" id="10_7tmf6"]
+[ext_resource type="Script" uid="uid://cqogs0kers4at" path="res://walls.gd" id="11_sisia"]
+[ext_resource type="FontFile" uid="uid://dcrs5fdgweq10" path="res://assets/fonts/m5x7.ttf" id="12_xorak"]
+[ext_resource type="Texture2D" uid="uid://dxdwwuqo8xggr" path="res://assets/game_over_panel.png" id="13_4jymc"]
+[ext_resource type="Script" uid="uid://cjctggqlul1ko" path="res://ui/result/match_result.gd" id="14_0lgry"]
+[ext_resource type="Texture2D" uid="uid://mgcocpij2ft8" path="res://assets/text_game_over.png" id="15_h7iu2"]
+[ext_resource type="Texture2D" uid="uid://bw6j5i0brf0k2" path="res://assets/button_play_again.png" id="16_8sg4y"]
+[ext_resource type="Texture2D" uid="uid://2l2mw5en68s4" path="res://assets/button_pressed_play_again.png" id="17_vktc5"]
+[ext_resource type="Texture2D" uid="uid://ccbpkyvuwbk87" path="res://assets/button_exit.png" id="18_ohnrv"]
+[ext_resource type="Texture2D" uid="uid://cnjai487t50jx" path="res://assets/button_pressed_exit.png" id="19_kaw54"]
+[ext_resource type="Texture2D" uid="uid://bpo03bmia35j8" path="res://assets/options_panel_blue.png" id="20_1paru"]
+[ext_resource type="Script" uid="uid://cohwhpshkjuo7" path="res://ui/options/option.gd" id="21_jbuku"]
+[ext_resource type="Texture2D" uid="uid://c6k4ja5mkvlsq" path="res://assets/button_resume_blue.png" id="22_bq3im"]
+[ext_resource type="Texture2D" uid="uid://dh502vtvs3gtj" path="res://assets/button_pressed_resume_blue.png" id="23_weo45"]
+[ext_resource type="Texture2D" uid="uid://bn0pt78y01480" path="res://assets/button_one_player_unchecked_blue.png" id="24_3crti"]
+[ext_resource type="Texture2D" uid="uid://breissn1o3lg" path="res://assets/button_one_player_checked_blue.png" id="25_fwql0"]
+[ext_resource type="Texture2D" uid="uid://cfiu08vnwf0pa" path="res://assets/button_two_player_unchecked_blue.png" id="26_yeywo"]
+[ext_resource type="Texture2D" uid="uid://brt6nnfdbdmvt" path="res://assets/button_two_player_checked_blue.png" id="27_xi3ba"]
+[ext_resource type="Script" uid="uid://c7phav40g7csx" path="res://ui/difficulty/difficulty_panel.gd" id="28_at8vr"]
+[ext_resource type="Texture2D" uid="uid://jxbljasactm7" path="res://assets/button_arrow_left.png" id="29_3hog8"]
+[ext_resource type="Texture2D" uid="uid://nq1jbod6pdxe" path="res://assets/button_pressed_arrow_left.png" id="30_4e2d6"]
+[ext_resource type="Texture2D" uid="uid://nu7ahojy8q5i" path="res://assets/difficulty_normal.png" id="31_rr8ep"]
+[ext_resource type="Texture2D" uid="uid://bf12lph7jltuj" path="res://assets/button_arrow_right.png" id="32_ohuyl"]
+[ext_resource type="Texture2D" uid="uid://v5nbcb5g1dop" path="res://assets/button_pressed_arrow_right.png" id="33_o3dub"]
+[ext_resource type="Texture2D" uid="uid://cayuoh1t0qwk" path="res://assets/button_restart_blue.png" id="34_gk1pq"]
+[ext_resource type="Texture2D" uid="uid://drdk7tk1jd3wp" path="res://assets/button_pressed_restart_blue.png" id="35_3wmuf"]
+[ext_resource type="Texture2D" uid="uid://d1nfj6cxc7ni8" path="res://assets/button_exit_blue.png" id="36_vgjtp"]
+[ext_resource type="Texture2D" uid="uid://bs73lnqi4g08j" path="res://assets/button_pressed_exit_blue.png" id="37_my0r7"]
+[ext_resource type="Script" uid="uid://dmuqay14l67jd" path="res://assets/audio/music/main_music.gd" id="38_ym2td"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybre"]
 size = Vector2(10, 72)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rm3uy"]
 radius = 11.0
+
+[sub_resource type="Gradient" id="Gradient_ball_trail"]
+offsets = PackedFloat32Array(0, 0.45, 1)
+colors = PackedColorArray(0.35, 0.85, 1, 0.55, 0.78, 0.38, 1, 0.3, 0.95, 0.28, 0.65, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ball_trail"]
+gradient = SubResource("Gradient_ball_trail")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gob4j"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_ball_trail")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iadj7"]
 size = Vector2(1150.5, 20)
@@ -52,7 +66,7 @@ size = Vector2(1152, 20)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_score_panel"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_game_over_panel"]
-texture = ExtResource("11_w0y0c")
+texture = ExtResource("13_4jymc")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
@@ -61,7 +75,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2cqfq"]
-texture = ExtResource("18_gagp1")
+texture = ExtResource("20_1paru")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
@@ -71,7 +85,7 @@ axis_stretch_vertical = 1
 
 [node name="Main" type="Node2D" unique_id=1589445655]
 process_mode = 3
-script = ExtResource("1_gob4j")
+script = ExtResource("1_vkvnp")
 
 [node name="Countdown" type="Timer" parent="." unique_id=657337167]
 
@@ -83,16 +97,16 @@ offset_right = 1280.0
 offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_uvurp")
+texture = ExtResource("2_urpib")
 
 [node name="LeftPaddle" type="CharacterBody2D" parent="." unique_id=82933314]
 process_mode = 1
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("3_vcdjx")
+script = ExtResource("3_cieqw")
 
 [node name="Sprite2D" type="Sprite2D" parent="LeftPaddle" unique_id=2048462872]
-texture = ExtResource("4_f85yp")
+texture = ExtResource("4_ta815")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPaddle" unique_id=1818496937]
 shape = SubResource("RectangleShape2D_2ybre")
@@ -101,11 +115,11 @@ shape = SubResource("RectangleShape2D_2ybre")
 process_mode = 1
 collision_layer = 2
 collision_mask = 4
-script = ExtResource("5_4gc7v")
+script = ExtResource("5_64wtb")
 side = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="RightPaddle" unique_id=462661978]
-texture = ExtResource("6_f1cjg")
+texture = ExtResource("6_0rekh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightPaddle" unique_id=334783799]
 shape = SubResource("RectangleShape2D_2ybre")
@@ -113,19 +127,29 @@ shape = SubResource("RectangleShape2D_2ybre")
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=1316763956]
 process_mode = 1
 collision_mask = 6
-script = ExtResource("7_e00sq")
+script = ExtResource("7_281ou")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=82578886]
+z_index = 1
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("8_k5wni")
+texture = ExtResource("8_nrbry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1875643898]
 scale = Vector2(0.7, 0.7)
 shape = SubResource("CircleShape2D_rm3uy")
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Ball" unique_id=1259342265]
+texture = ExtResource("9_iswgq")
+lifetime = 0.14
+process_material = SubResource("ParticleProcessMaterial_gob4j")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="Ball" unique_id=1840883474]
+stream = ExtResource("10_7tmf6")
+volume_db = -10.0
+
 [node name="Walls" type="Node" parent="." unique_id=1364748573]
 process_mode = 1
-script = ExtResource("9_44l5f")
+script = ExtResource("11_sisia")
 
 [node name="Top" type="StaticBody2D" parent="Walls" unique_id=1187489387]
 collision_layer = 4
@@ -172,7 +196,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.34, 0.79, 1, 1)
 theme_override_colors/font_outline_color = Color(0.03, 0.04, 0.12, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("10_2da88")
+theme_override_fonts/font = ExtResource("12_xorak")
 theme_override_font_sizes/font_size = 64
 text = "0"
 
@@ -186,7 +210,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.46, 0.66, 1)
 theme_override_colors/font_outline_color = Color(0.03, 0.04, 0.12, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("10_2da88")
+theme_override_fonts/font = ExtResource("12_xorak")
 theme_override_font_sizes/font_size = 64
 text = "0"
 horizontal_alignment = 2
@@ -208,7 +232,7 @@ visible = false
 z_index = 20
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_game_over_panel")
-script = ExtResource("12_gq54d")
+script = ExtResource("14_0lgry")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel" unique_id=1803908511]
 layout_mode = 2
@@ -222,7 +246,7 @@ layout_mode = 2
 
 [node name="MatchResultLabel" type="TextureRect" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer" unique_id=1675795532]
 layout_mode = 2
-texture = ExtResource("13_s2dp4")
+texture = ExtResource("15_h7iu2")
 stretch_mode = 3
 
 [node name="Spacer" type="Control" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer" unique_id=754254159]
@@ -231,20 +255,20 @@ size_flags_vertical = 3
 
 [node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer" unique_id=2143512389]
 layout_mode = 2
-texture_normal = ExtResource("14_buoxk")
-texture_pressed = ExtResource("15_im2gh")
+texture_normal = ExtResource("16_8sg4y")
+texture_pressed = ExtResource("17_vktc5")
 
 [node name="ExitButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/MatchResultPanel/MarginContainer/VContainer" unique_id=1905667017]
 layout_mode = 2
-texture_normal = ExtResource("16_84ymw")
-texture_pressed = ExtResource("17_u4lhc")
+texture_normal = ExtResource("18_ohnrv")
+texture_pressed = ExtResource("19_kaw54")
 
 [node name="OptionPanel" type="PanelContainer" parent="CanvasLayer/UI/CenterContainer" unique_id=2040766972]
 visible = false
 z_index = 10
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_2cqfq")
-script = ExtResource("19_5amgw")
+script = ExtResource("21_jbuku")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/CenterContainer/OptionPanel" unique_id=1756597223]
 layout_mode = 2
@@ -259,56 +283,56 @@ theme_override_constants/separation = 8
 
 [node name="ResumeButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=921066846]
 layout_mode = 2
-texture_normal = ExtResource("20_l8dhh")
-texture_pressed = ExtResource("21_msvi7")
+texture_normal = ExtResource("22_bq3im")
+texture_pressed = ExtResource("23_weo45")
 
 [node name="OnePlayerButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=361556620]
 custom_minimum_size = Vector2(240, 54)
 layout_mode = 2
 focus_mode = 0
 toggle_mode = true
-texture_normal = ExtResource("22_73tpa")
-texture_pressed = ExtResource("23_3tfmv")
+texture_normal = ExtResource("24_3crti")
+texture_pressed = ExtResource("25_fwql0")
 
 [node name="TwoPlayerButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=112339012]
 custom_minimum_size = Vector2(240, 54)
 layout_mode = 2
 focus_mode = 0
 toggle_mode = true
-texture_normal = ExtResource("24_ktdwu")
-texture_pressed = ExtResource("25_t2wq1")
+texture_normal = ExtResource("26_yeywo")
+texture_pressed = ExtResource("27_xi3ba")
 
 [node name="DifficultyPanel" type="HBoxContainer" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=1531712770]
 layout_mode = 2
 alignment = 1
-script = ExtResource("26_hprsj")
+script = ExtResource("28_at8vr")
 
 [node name="PrevButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer/DifficultyPanel" unique_id=800351389]
 layout_mode = 2
-texture_normal = ExtResource("27_u6x2d")
-texture_pressed = ExtResource("28_x8s27")
+texture_normal = ExtResource("29_3hog8")
+texture_pressed = ExtResource("30_4e2d6")
 
 [node name="Difficulty" type="TextureRect" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer/DifficultyPanel" unique_id=576135544]
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("29_oobh7")
+texture = ExtResource("31_rr8ep")
 
 [node name="NextButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer/DifficultyPanel" unique_id=1807299179]
 layout_mode = 2
-texture_normal = ExtResource("30_kycm2")
-texture_pressed = ExtResource("31_a1k0t")
+texture_normal = ExtResource("32_ohuyl")
+texture_pressed = ExtResource("33_o3dub")
 
 [node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=810982459]
 layout_mode = 2
-texture_normal = ExtResource("32_8c722")
-texture_pressed = ExtResource("33_ve3av")
+texture_normal = ExtResource("34_gk1pq")
+texture_pressed = ExtResource("35_3wmuf")
 
 [node name="ExitButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=942843814]
 layout_mode = 2
-texture_normal = ExtResource("34_ug5su")
-texture_pressed = ExtResource("35_yifn8")
+texture_normal = ExtResource("36_vgjtp")
+texture_pressed = ExtResource("37_my0r7")
 
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1369538431]
+[node name="MainMusic" type="AudioStreamPlayer" parent="." unique_id=1369538431]
 volume_db = -15.0
 autoplay = true
-script = ExtResource("36_w6mlb")
+script = ExtResource("38_ym2td")

@@ -1,9 +1,6 @@
 extends AudioStreamPlayer
 
 const PLAYLIST: Array[AudioStream] = [
-	preload("res://assets/audio/music/menu-1.mp3"),
-	preload("res://assets/audio/music/menu-2.mp3"),
-	preload("res://assets/audio/music/menu-3.mp3"),
 	preload("res://assets/audio/music/gameplay-1.mp3"),
 	preload("res://assets/audio/music/gameplay-2.mp3"),
 ]

@@ -39,3 +39,4 @@ func _update_position() -> void:
 			position.x = viewport_size.x - paddle_size.x / 2
 
 	position.y = viewport_size.y / 2
+	reset_physics_interpolation()
