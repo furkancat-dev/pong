@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://d1nfj6cxc7ni8" path="res://assets/button_exit_blue.png" id="36_vgjtp"]
 [ext_resource type="Texture2D" uid="uid://bs73lnqi4g08j" path="res://assets/button_pressed_exit_blue.png" id="37_my0r7"]
 [ext_resource type="Script" uid="uid://dmuqay14l67jd" path="res://assets/audio/music/main_music.gd" id="38_ym2td"]
+[ext_resource type="PackedScene" path="res://ui/audio/audio_settings.tscn" id="39_audio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybre"]
 size = Vector2(10, 72)
@@ -89,7 +90,7 @@ script = ExtResource("1_vkvnp")
 
 [node name="Countdown" type="Timer" parent="." unique_id=657337167]
 
-[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=1551990763]
 layer = -1
 
 [node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=1060464146]
@@ -149,6 +150,7 @@ process_material = SubResource("ParticleProcessMaterial_gob4j")
 [node name="HitSound" type="AudioStreamPlayer" parent="Ball" unique_id=1840883474]
 stream = ExtResource("10_7tmf6")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="Walls" type="Node" parent="." unique_id=1364748573]
 process_mode = 1
@@ -325,6 +327,17 @@ layout_mode = 2
 texture_normal = ExtResource("32_ohuyl")
 texture_pressed = ExtResource("33_o3dub")
 
+[node name="AudioSettingsButton" type="Button" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=1529776308]
+custom_minimum_size = Vector2(240, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.85, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.46, 0.66, 1)
+theme_override_fonts/font = ExtResource("12_xorak")
+theme_override_font_sizes/font_size = 28
+text = "AUDIO SETTINGS"
+flat = true
+
 [node name="RestartButton" type="TextureButton" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer/VContainer" unique_id=810982459]
 layout_mode = 2
 texture_normal = ExtResource("34_gk1pq")
@@ -335,7 +348,11 @@ layout_mode = 2
 texture_normal = ExtResource("36_vgjtp")
 texture_pressed = ExtResource("37_my0r7")
 
+[node name="AudioSettings" parent="CanvasLayer/UI/CenterContainer/OptionPanel/MarginContainer" unique_id=2037914965 instance=ExtResource("39_audio")]
+visible = false
+layout_mode = 2
+
 [node name="MainMusic" type="AudioStreamPlayer" parent="." unique_id=1369538431]
 volume_db = -15.0
-autoplay = true
+bus = &"Music"
 script = ExtResource("38_ym2td")
